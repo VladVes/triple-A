@@ -1,5 +1,5 @@
-// import { app } from '../src/app.js';
-const app = require('../src/app.js');
+import * as app from '../src/app.js';
+// const app = require('../src/app.js');
 
 describe('app', () => {
   test('return 0', () => {
