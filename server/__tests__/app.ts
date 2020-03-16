@@ -1,4 +1,4 @@
-import * as app from '../src/app.js';
+import * as app from '../src/app';
 // const app = require('../src/app.js');
 
 describe('app', () => {

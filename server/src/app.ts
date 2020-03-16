@@ -1,5 +1,5 @@
 
-function run() {
+function run(): number {
   console.log('Application has started.');
   return 0;
 }
