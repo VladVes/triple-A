@@ -1,0 +1,23 @@
+{
+"compilerOptions": {
+  "strict": true,
+  "rootDir": "server/src",
+  "sourceMap": true,
+  "declaration": false,
+  "moduleResolution": "node",
+  "emitDecoratorMetadata": true,
+  "experimentalDecorators": true,
+  "importHelpers": true,
+  "target": "es2016",
+  "module": "commonjs",
+  "lib": ["esnext"],
+  "skipLibCheck": true,
+  "skipDefaultLibCheck": true,
+  "noImplicitAny": true,
+  "preserveConstEnums": true,
+  "allowSyntheticDefaultImports": true,
+  "esModuleInterop": true 
+},
+"include": ["server/src/**/*"],
+"exclude": ["node_modules"]
+}
