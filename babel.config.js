@@ -1,16 +1,10 @@
-module.exports = {
-  presets: [
+module.exports = function (api) {
+  api.cache(true);
+  const presets = [
     ['@babel/preset-env', {targets: {node: 'current'}}],
     '@babel/preset-typescript',
-  ],
-  // "plugins": ["@babel/plugin-transform-runtime"]
-  // "plugins": ["transform-default-import"]
-};
+  ];
+  const plugins = [];
 
-// export default {
-//   presets: [
-//     ['@babel/preset-env', {targets: {node: 'current'}}],
-//     // '@babel/preset-typescript',
-//   ],
-//   "plugins": ["transform-default-import"]
-// };
+  return { presets, plugins };
+};

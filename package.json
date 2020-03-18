@@ -6,7 +6,7 @@
   "author": "VladVes <veselov.workflow@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node ./server/src/index.ts",
+    "start": "babel-node --extensions '.ts' ./server/src/index.ts",
     "test": "jest"
   },
   "dependencies": {
@@ -15,10 +15,10 @@
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/node": "^7.8.7",
-    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-typescript": "^7.8.3",
     "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.1",
     "babel-jest": "^25.1.0",
     "jest": "^25.1.0",
     "ts-jest": "^25.2.1",
