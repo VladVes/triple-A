@@ -9,7 +9,6 @@ router.get('/', async ctx => {
 });
 
 router.get('/:id', async ctx => {
-  console.log('params: ', ctx.params);
   const user = await find({
     id: Number(ctx.params.id as string),
   });

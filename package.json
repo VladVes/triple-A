@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node --extensions '.ts' ./server/src/app.ts",
-    "test": "jest"
+    "test": "tripleA_connection='./__tests__/__data' jest"
   },
   "dependencies": {
     "@types/koa-router": "^7.4.0",
@@ -30,6 +30,7 @@
     "babel-jest": "^25.1.0",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
+    "supertest-koa-agent": "^0.3.2",
     "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"

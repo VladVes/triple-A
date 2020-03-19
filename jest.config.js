@@ -1,8 +1,17 @@
 module.exports = {
+  verbose: true,
+  testMatch: ['**/?(*.)+(spec|test).ts?(x)'],
+
+  // how to define env vars before run test?
+  // testEnvironmentOptions: {
+  //   tripleA_connection: './tests/__data', 
+  // },
+
   // transform: {
   //   "^,+\\.ts?$": "ts-jest"
   // },
-  env: {
-    JWT_connection: './tests/__data',
-  },
+  // env: {
+  //   tripleA_connection: './tests/__data',
+  // },
 }
+  
