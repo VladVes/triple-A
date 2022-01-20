@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 
-module.exports = [
+export default [
   {
     id: 1,
     login: 'John',

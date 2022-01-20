@@ -1,14 +1,15 @@
-import { resolve } from "path";
-import { find as findEntry } from "lodash/fp";
+import { resolve } from 'path';
+import { find as findEntry } from 'lodash/fp';
 
-import config from "../config";
+import config from '../config';
 
+// eslint-disable-next-line import/no-dynamic-require
 const users = require(resolve(
   __dirname,
-  "..",
-  "..",
+  '..',
+  '..',
   config.connection,
-  "usersData"
+  'usersData',
 ));
 
 export async function find(query) {

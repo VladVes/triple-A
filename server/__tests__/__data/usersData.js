@@ -1,14 +1,14 @@
-import bcrypt from "bcryptjs";
+import bcrypt from 'bcryptjs';
 
-module.exports = [
+export default [
   {
     id: 1,
-    login: "user1",
-    password: bcrypt.hashSync("user1"),
+    login: 'user1',
+    password: bcrypt.hashSync('user1'),
   },
   {
     id: 2,
-    login: "user2",
-    password: bcrypt.hashSync("user2"),
+    login: 'user2',
+    password: bcrypt.hashSync('user2'),
   },
 ];
