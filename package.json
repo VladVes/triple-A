@@ -7,8 +7,23 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node ./server/src/app.js",
-    "test": "tripleA_connection='./__tests__/__data' jest",
-    "lint": "eslint ./server --ext .js"
+    "test": "better-npm-run test",
+    "lint": "eslint ./server --ext .js",
+    "precommit": "lint-staged"
+  },
+  "betterScripts": {
+    "test": {
+      "command": "ava",
+      "env": {
+        "JWT_connection": "./tests/__data",
+        "JWT_secret": "TEST"
+      }
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,7 +36,9 @@
     "@babel/core": "^7.8.7",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "ava": "^4.0.1",
     "babel-jest": "^25.1.0",
+    "better-npm-run": "^0.1.1",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -39,7 +56,9 @@
       "airbnb-base",
       "prettier"
     ],
-    "plugins": ["jest"],
+    "plugins": [
+      "jest"
+    ],
     "env": {
       "node": true,
       "jest": true
@@ -48,5 +67,14 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "ava": {
+    "files": [
+      "tests/**/*.js",
+      "!tests/__data/**/*.js",
+      "!tests/helpers/**/*.js"
+    ],
+    "babel": false,
+    "compileEnhancements": false
   }
 }
