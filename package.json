@@ -1,24 +1,15 @@
 {
   "name": "triple-a",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "main": "src/index.js",
   "repository": "git@github.com:VladVes/triple-A.git",
   "author": "VladVes <veselov.workflow@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec babel-node ./server/src/app.js",
-    "test": "better-npm-run test",
+    "start": "nodemon --exec babel-node ./server/src/index.js",
+    "test": "jest",
     "lint": "eslint ./server --ext .js",
     "precommit": "lint-staged"
-  },
-  "betterScripts": {
-    "test": {
-      "command": "ava",
-      "env": {
-        "JWT_connection": "./tests/__data",
-        "JWT_secret": "TEST"
-      }
-    }
   },
   "lint-staged": {
     "*.js": [
@@ -27,18 +18,17 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dotenv": "^14.2.0",
     "koa": "^2.11.0",
     "koa-router": "^8.0.8",
     "lodash": "^4.17.15",
     "rc": "^1.2.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "ava": "^4.0.1",
+    "@babel/core": "^7.16.10",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "babel-jest": "^25.1.0",
-    "better-npm-run": "^0.1.1",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -50,7 +40,8 @@
   },
   "eslintConfig": {
     "rules": {
-      "import/prefer-default-export": 0
+      "import/prefer-default-export": 0,
+      "import/no-dynamic-require": 0
     },
     "extends": [
       "airbnb-base",
@@ -67,14 +58,5 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
-  },
-  "ava": {
-    "files": [
-      "tests/**/*.js",
-      "!tests/__data/**/*.js",
-      "!tests/helpers/**/*.js"
-    ],
-    "babel": false,
-    "compileEnhancements": false
   }
 }

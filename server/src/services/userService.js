@@ -3,14 +3,8 @@ import { find as findEntry } from 'lodash/fp';
 
 import config from '../config';
 
-// eslint-disable-next-line import/no-dynamic-require
-const users = require(resolve(
-  __dirname,
-  '..',
-  '..',
-  config.connection,
-  'usersData',
-));
+const dataPath = resolve(__dirname, '..', '..', config.connection, 'usersData');
+const users = require(dataPath);
 
 export async function find(query) {
   return findEntry(query, users);

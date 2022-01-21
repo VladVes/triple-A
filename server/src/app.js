@@ -1,7 +1,7 @@
 import Koa from 'koa';
 import Router from 'koa-router';
+import 'dotenv/config';
 
-import config from './config';
 import usersModule from './modules/users/userModule';
 
 export function createApp() {
@@ -18,5 +18,3 @@ export function createApp() {
 
   return app;
 }
-
-createApp().listen(config.port);

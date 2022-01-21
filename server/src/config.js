@@ -1,6 +1,7 @@
-import rc from 'rc';
+const isTestEnv = process.env.NODE_ENV === 'test';
 
-export default rc('tripleA', {
+export default {
   port: process.env.PORT || 3000,
-  connection: './data',
-});
+  connection: isTestEnv ? './__tests__/__data' : './data',
+  secret: isTestEnv ? 'TEST' : 'secret',
+};
