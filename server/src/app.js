@@ -3,6 +3,7 @@ import Router from 'koa-router';
 import 'dotenv/config';
 
 import usersModule from './modules/users/userModule';
+import authModule from './modules/auth/authModule';
 
 export function createApp() {
   const app = new Koa();
@@ -11,6 +12,7 @@ export function createApp() {
     ctx.body = 'ok';
   });
 
+  router.use('/auth', authModule.routes());
   router.use('/users', usersModule.routes());
 
   app.use(router.allowedMethods());
