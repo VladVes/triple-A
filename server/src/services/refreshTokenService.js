@@ -12,13 +12,13 @@ let tokens = require(resolve(
 ));
 
 export async function find(query) {
-  return findEntry(tokens, query);
+  return findEntry(query, tokens);
 }
 
-export async function create(entry) {
+export async function add(entry) {
   tokens.push(entry);
 }
 
 export async function remove(query) {
-  tokens = reject(tokens, query);
+  tokens = reject(query, tokens);
 }
