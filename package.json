@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node ./server/src/index.js",
     "test": "jest",
-    "lint": "eslint ./server --ext .js",
+    "lint": "eslint ./server ./client --ext .js",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -17,6 +17,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.25.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^14.2.0",
     "jsonwebtoken": "^8.5.1",
@@ -25,13 +26,13 @@
     "koa-jwt": "^4.0.3",
     "koa-router": "^8.0.8",
     "lodash": "^4.17.15",
-    "rc": "^1.2.8",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
+    "axios-mock-adapter": "^1.20.0",
     "babel-jest": "^25.1.0",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
